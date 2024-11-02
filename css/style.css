@@ -1,0 +1,518 @@
+:root {
+    --color-white: #fff;
+    --color-black-transparent: rgba(0, 0, 0, 0.7);
+    --color-black-opaque: rgba(0, 0, 0, 0.9);
+    --color-principal:rgb(0, 0, 0);
+    --color-blue: #007bff;
+    --color-light-gray: #f0f0f0;
+    --color-blue-card: #3498db;
+    --color-green-card: #2ecc71;
+    --color-shadow: rgba(0, 0, 0, 0.1);
+    --facebook-color: rgb(59, 89, 152);
+    --twitter-color: rgb(29, 161, 242);
+    --instagram-color:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    --linkedin-color: rgb(0, 119, 181);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--color-white);
+    overflow-x: hidden;
+}
+
+.navbar {
+    background-color: var(--color-black-transparent);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo img {
+    height: 40px;
+    display: block;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.nav-menu {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    gap: 1rem;
+    margin-left: 2rem; /* Espacio entre el menú principal y el social nav */
+}
+
+.nav-link {
+    color: var(--color-white);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    font-weight: 400;
+}
+
+.nav-link:hover {
+    color: var(--color-blue);
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.social-menu {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1001;
+    display: flex;
+    gap: 1rem;
+}
+
+/*  */
+
+
+
+.social-link {
+    color: var(--color-white); /* Color por defecto */
+    font-size: 1.7rem;
+    transition: color 0.3s ease; /* Transición suave */
+}
+
+.social-link:hover {
+    color: transparent; /* Hace que el texto se vuelva transparente */
+}
+
+.social-link:hover:nth-child(1) {
+    color: var(--facebook-color); /* Facebook */
+}
+
+.social-link:hover:nth-child(2) {
+    color: var(--twitter-color); /* Twitter */
+}
+
+.social-link:hover:nth-child(3) {
+    background: var(--instagram-color);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.social-link:hover:nth-child(4) {
+    color: var(--linkedin-color); /* LinkedIn */
+}
+
+
+/* Main cubriendo toda la pantalla */
+.video-background {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ocupa toda la pantalla */
+    overflow: hidden;
+}
+
+#background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: 100%;
+    min-width: 100%;
+    transform: translate(-50%, -50%);
+}
+
+.overlay {
+    position: absolute; /* Asegura que la superposición esté encima del video */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-black-opaque); /* Negro transparente */
+    z-index: 1; /* Asegúrate de que esté encima del video */
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--color-white);
+    z-index: 1;
+    padding: 2rem;
+}
+
+.content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.content p {
+    font-size: 1.5rem;
+}
+
+
+@media (max-width: 768px) {
+    .nav-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .social-menu {
+        margin-left: 0;
+        margin-top: 1rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Si tienes un menú desplegable en móvil, asegúrate de que el social nav esté incluido */
+    .nav-wrapper.active .social-menu {
+        display: flex;
+    }
+
+    /* Si el menú está oculto por defecto en móvil */
+    .nav-wrapper:not(.active) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-container {
+        flex-wrap: wrap;
+    }
+
+    .nav-wrapper {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 80%;
+        height: calc(100% - 70px);
+        background-color: var(--color-black-opaque);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .nav-wrapper.active {
+        left: 0;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+        padding: 2rem;
+    }
+
+    .nav-link {
+        padding: 1rem;
+        text-align: left;
+        font-size: 1.1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+    }
+
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background-color: var(--color-white);
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .social-menu {
+        top: auto;
+        bottom: 1rem;
+        right: 1rem;
+    }
+
+    .content {
+        padding-top: 30vh;
+    }
+
+    .content h1 {
+        font-size: 2rem;
+    }
+
+    .content p {
+        font-size: 1rem;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Cards Mision Vision */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: var(--color-light-gray);
+    flex-wrap: wrap;
+}
+  
+.card {
+    width: 400px;
+    height: 300px;
+    perspective: 1000px;
+    margin-bottom: 1rem;
+}
+  
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+}
+  
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+  
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--color-shadow);
+}
+  
+.card-front {
+    background-color: var(--color-principal);
+    color: var(--color-white);
+    flex-direction: column;
+}
+  
+.card-back {
+    background-color: var(--color-black-opaque);
+    color: var(--color-white);
+    transform: rotateY(180deg);
+    padding: 1rem;
+    text-align: center;
+}
+  
+.card h2 {
+    font-size: 1.9rem;
+    margin: 0 0 0.5rem 0;
+}
+  
+.card p {
+    overflow-wrap: break-word; /* Permite que las palabras largas se dividan */
+    word-wrap: break-word; /* Asegura que el texto se ajuste dentro del contenedor */
+    hyphens: auto; /* Añade guiones si es necesario */
+    line-height: 1.5; /* Espaciado entre líneas */
+    font-size: 1rem; /* Ajusta el tamaño de la fuente según lo necesites */
+}
+  
+.name_mv {
+    display: none;
+}
+
+/* Media Query for Smaller Devices */
+@media screen and (max-width: 768px) {
+    .nav-menu li {
+        opacity: 0;
+        animation: slideIn 0.3s ease forwards;
+    }
+
+    .nav-menu li:nth-child(1) { animation-delay: 0.1s; }
+    .nav-menu li:nth-child(2) { animation-delay: 0.2s; }
+    .nav-menu li:nth-child(3) { animation-delay: 0.3s; }
+    .nav-menu li:nth-child(4) { animation-delay: 0.4s; }
+    .nav-menu li:nth-child(5) { animation-delay: 0.5s; }
+
+    .cards-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .card {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        perspective: none;
+    }
+    
+    .card-inner {
+        transform-style: flat;
+    }
+    
+    .card:hover .card-inner {
+        transform: none;
+    }
+    
+    .card-front, .card-back {
+        position: static;
+        height: auto;
+        backface-visibility: visible;
+    }
+    
+    .card-front {
+        padding: 1rem;
+        display: none;
+    }
+    
+    .card-back {
+        position: relative;
+        padding: 1rem;
+        text-align: center;
+        background-color: var(--color-principal);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    
+    .card-back h2 {
+        margin-bottom: 0.5rem;
+        font-size: 2.6rem;
+        transform: rotateY(180deg);
+    }
+    
+    .card-back p {
+        font-size: 1.5rem;
+        transform: rotateY(180deg);
+    }
+
+    .name_mv {
+        display: block;
+    }
+}
+
+
+/* footer  */
+
+.site-footer {
+    background-color: var(--color-black-opaque);
+    color: #fff;
+    padding: 2rem 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 1rem;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 1rem;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-section p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section i {
+    margin-right: 0.5rem;
+}
+
+.footer-social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-social-links a {
+    color: #fff;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.footer-social-links a:hover {
+    color: #4ecdc4;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-section {
+        margin-bottom: 2rem;
+    }
+
+    .footer-social-links {
+        justify-content: center;
+    }
+}
+
+/* fin footer */
