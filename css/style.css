@@ -15,6 +15,52 @@
 }
 
 
+/* spinner */
+
+.spinner-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.spinner {
+    width: 100px;
+    height: 100px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.content {
+    padding: 20px;
+    text-align: center;
+}
+
+/* fin spineer
+ */
+
 * {
     margin: 0;
     padding: 0;
@@ -516,3 +562,28 @@ body {
 }
 
 /* fin footer */
+
+
+/* empezamos con las vistas de aqui para abajo */
+
+/* Vista nosotros */
+
+.nosotrosContainer{
+    width: 100vw;
+    height: 100vh;
+}
+.nosotrosContainer h1{
+    text-align: center;
+    margin-top: 100px;
+    color: var(--color-blue);
+}
+
+.diagonal{
+    transform: rotate(3deg);
+    width: 100vw;
+    height: 5px;
+    margin-top: 5px;
+    background-color: black;
+}
+
+/* Fin Nosotros */

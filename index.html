@@ -9,42 +9,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="navbar-container">
-            <div class="logo">
-                <img src="https://img.freepik.com/vector-gratis/vector-degradado-logotipo-colorido-pajaro_343694-1365.jpg" alt="Logo">
-            </div>
-            <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menú">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-            <div class="nav-wrapper">
-                <ul class="nav-menu">
-                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
-                    <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
-                    <li><a href="#areas-practicas" class="nav-link">Áreas de Prácticas</a></li>
-                    <li><a href="#equipo" class="nav-link">Equipo</a></li>
-                    <li><a href="#novedades" class="nav-link">Novedades</a></li>
-                </ul>
-
-                <div class="social-menu">
-                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-
-            </div>
-        </div>
-    </nav>
-
-
-       
     
+  <div id="spinner" class="spinner-container">
+    <div class="spinner">
+        <img src="/placeholder.svg?height=50&width=50" alt="Logo de carga" />
+    </div>
+</div>
+
+
+  <div id="menu-container"></div>
+
+  
     <main class="video-background">
         <video autoplay loop muted playsinline id="background-video">
-            <source src="video/fondo.mp4" type="video/mp4">
+            <source src="../video/fondo.mp4" type="video/mp4">
             Tu navegador no soporta el elemento de video.
         </video>
         <div class="overlay"></div> <!-- Agregado para la superposición -->
@@ -55,8 +33,6 @@
     </main>
     
 
-  
-  
 
     <div class="cards-container">
       <div class="card">
@@ -94,31 +70,9 @@
       </div>
     </div>
 
-    <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>Contacto</h3>
-                <p><i class="fas fa-map-marker-alt"></i> San sALVADOR</p>
-                <p><i class="fas fa-phone"></i> +503 00000000</p>
-                <p><i class="fas fa-envelope"></i> info@gmail.com</p>
-            </div>
-            <div class="footer-section">
-                <h3>Síguenos</h3>
-                <div class="footer-social-links">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2023 RVF SOLUTIONS. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+    <div id="footer-container"></div>
 
-    
- 
+  
     <script src="js/script.js"></script>
 </body>
 </html>
