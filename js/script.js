@@ -11,7 +11,7 @@ window.addEventListener('load', function() {
 // Función para agregar el menú y el footer en cada página del sitio web
 document.addEventListener("DOMContentLoaded", function() {
     // Cargar el menú
-    fetch("../include/menu.html")
+    fetch("./include/menu.html")
         .then(response => response.text())
         .then(data => {
             document.getElementById("menu-container").innerHTML = data;
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
         .catch(error => console.error("Error al cargar el menú:", error));
 
     // Cargar el footer
-    fetch("../include/footer.html")
+    fetch("./include/footer.html")
         .then(response => response.text())
         .then(data => {
             document.getElementById("footer-container").innerHTML = data;
