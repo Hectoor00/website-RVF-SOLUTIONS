@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
         .catch(error => console.error("Error al cargar el menú:", error));
 
     // Cargar el footer
-    fetch("../include/footer.html")  // Ajuste de ruta para acceder desde 'vistas'
+    fetch("../include/footerVistas.html")  // Ajuste de ruta para acceder desde 'vistas'
         .then(response => response.text())
         .then(data => {
             document.getElementById("footer-container").innerHTML = data;

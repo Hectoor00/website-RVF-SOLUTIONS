@@ -12,6 +12,12 @@
     --twitter-color: rgb(29, 161, 242);
     --instagram-color:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
     --linkedin-color: rgb(0, 119, 181);
+
+
+
+    /* paleta principa */
+    --pricipal-azul: #0f101b;
+    --principal-dorado:#ab8f58;
 }
 
 
@@ -75,7 +81,7 @@ body {
 }
 
 .navbar {
-    background-color: var(--color-black-transparent);
+    background-color: var(--pricipal-azul);
     position: fixed;
     top: 0;
     left: 0;
@@ -121,7 +127,7 @@ body {
 }
 
 .nav-link:hover {
-    color: var(--color-blue);
+    color: var(--principal-dorado);
 }
 
 .menu-toggle {
@@ -142,7 +148,7 @@ body {
 
 
 .social-link {
-    color: var(--color-white); /* Color por defecto */
+    color: var(--principal-dorado); /* Color por defecto */
     font-size: 1.7rem;
     transition: color 0.3s ease; /* Transición suave */
 }
@@ -259,7 +265,7 @@ body {
         left: -100%;
         width: 80%;
         height: calc(100% - 70px);
-        background-color: var(--color-black-opaque);
+        background-color: var(--pricipal-azul);
         transition: all 0.3s ease-in-out;
     }
 
@@ -387,13 +393,13 @@ body {
 }
   
 .card-front {
-    background-color: var(--color-principal);
+    background-color: var(--pricipal-azul);
     color: var(--color-white);
     flex-direction: column;
 }
   
 .card-back {
-    background-color: var(--color-black-opaque);
+    background-color: var(--pricipal-azul);
     color: var(--color-white);
     transform: rotateY(180deg);
     padding: 1rem;
@@ -465,7 +471,7 @@ body {
         position: relative;
         padding: 1rem;
         text-align: center;
-        background-color: var(--color-principal);
+        background-color: var(--pricipal-azul);
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -491,7 +497,8 @@ body {
 /* footer  */
 
 .site-footer {
-    background-color: var(--color-black-opaque);
+    
+    background-color: var(--pricipal-azul);
     color: #fff;
     padding: 2rem 0;
     font-family: 'Poppins', sans-serif;
@@ -568,22 +575,150 @@ body {
 
 /* Vista nosotros */
 
-.nosotrosContainer{
-    width: 100vw;
-    height: 100vh;
-}
-.nosotrosContainer h1{
-    text-align: center;
+/* body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+} */
+
+.about-us {
+    padding: 2rem;
+    max-width: 1200px;
     margin-top: 100px;
-    color: var(--color-blue);
+    margin-left: 200px;
+    margin-right: 200px;
+    text-align: justify;
 }
 
-.diagonal{
-    transform: rotate(3deg);
-    width: 100vw;
-    height: 5px;
-    margin-top: 5px;
-    background-color: black;
+.about-intro {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
 }
+
+.firma-img {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0;
+}
+
+.intro-content {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.presentacion-video {
+    max-width: 300px;
+    width: 100%;
+}
+
+.por-que-elegirnos {
+    max-width: 500px;
+}
+.por-que-elegirnos p {
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.por-que-elegirnos h2 {
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.about-details h2, .about-details h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.about-details p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.about-details {
+    margin-top: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+
+    .about-us {
+        padding: 2rem;
+        max-width: 1200px;
+        margin-top: 100px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .about-intro {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .firma-img, .presentacion-video {
+        max-width: 100%;
+    }
+
+    .por-que-elegirnos h2 {
+        font-size: 1.5rem;
+    }
+
+    .about-details h2, .about-details h3 {
+        font-size: 1.5rem;
+    }
+
+    .about-details p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Estilo base */
+.minimal-link {
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+
+    color: #fff; /* Texto blanco */
+    background-color: var(--color-blue); /* Fondo color destacado */
+    border-color: var(--color-blue-card); /* Borde destacado */
+
+    /* color: #333; Color base */
+    text-decoration: none; /* Sin subrayado */
+    padding: 0.5rem 1rem;
+    border: 2px solid transparent; /* Borde invisible */
+    border-radius: 0.25rem;
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Efecto hover */
+.minimal-link:hover {
+    color: #fff; /* Texto blanco */
+    background-color: #43a9b0; /* Fondo color destacado */
+    border-color: #43a9b0; /* Borde destacado */
+    font-size: 1.05rem;
+}
+
+/* Estilo responsive */
+@media (max-width: 768px) {
+    .minimal-link {
+        font-size: 0.9rem; /* Fuente ligeramente más pequeña */
+        padding: 0.4rem 0.8rem; /* Ajustar padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .minimal-link {
+        font-size: 0.8rem; /* Fuente aún más pequeña */
+        padding: 0.3rem 0.6rem; /* Padding reducido */
+    }
+}
+
+
 
 /* Fin Nosotros */

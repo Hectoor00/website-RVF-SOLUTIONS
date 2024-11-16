@@ -73,4 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Ajustar el tamaño del video al cargar y al cambiar el tamaño de la ventana
     window.addEventListener("load", resizeVideo);
     window.addEventListener("resize", resizeVideo);
+
+
+    
 });
