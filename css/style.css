@@ -29,7 +29,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color:var(--pricipal-azul);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,6 +83,7 @@ body {
     line-height: 1.6;
     color: var(--color-white);
     overflow-x: hidden;
+    text-align: justify;
 }
 
 .navbar {
@@ -816,3 +817,168 @@ body {
 }
 
 /* fin proyectos */
+
+
+/* inicio areas Practicas*/
+
+
+.card-practicas {
+    margin-top: 150px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-right: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    width: 90%;
+    max-width: 100vw;
+}
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0; /* Eliminamos el padding */
+}
+
+.card img {
+    width: 100%;
+    height: 200px; /* Tamaño fijo para mantener consistencia */
+    object-fit: cover; /* La imagen cubre el espacio eliminando márgenes blancos */
+    margin: 0; /* Eliminamos cualquier margen residual */
+    display: block; /* Asegura que la imagen no herede estilos no deseados */
+}
+
+.card .PAP {
+    margin: 1rem 0 0; /* Espaciado uniforme del texto respecto a la imagen */
+    font-size: 1.3rem;
+    color: #b28e5e; /* Color del texto */
+    padding: 0.5rem; /* Espaciado interno para el texto */
+    background: #fff; /* Fondo blanco para separar visualmente */
+    border-top: 1px solid #ddd; /* Línea opcional entre imagen y texto */
+}
+
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: var(--pricipal-azul);
+    color: var(--principal-dorado);
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+}
+
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2rem;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Fin areas Practicas */
+
+
+/* equipo inicio */
+
+
+/* General */
+
+
+.header-title, .section-title {
+    color: #2c3e50;
+}
+
+.main-container {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: var(--principal-dorado);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    color: var(--principal-dorado);
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* Header */
+.header {
+    background: #34495e;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Sobre mí */
+.about-me {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    align-items: center;
+    color: var(--principal-dorado);
+}
+
+.profile-image {
+    max-width: 150px;
+    margin-right: 1rem;
+    border-radius: 30%;
+}
+
+.description {
+    flex: 1;
+}
+
+/* Secciones */
+section {
+    margin-bottom: 2rem;
+    color: var(--principal-dorado);
+}
+
+/* Footer */
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .about-me {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-image {
+        margin: 0 auto 1rem;
+    }
+}
+
+/* equipo fin  */

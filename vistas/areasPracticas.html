@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Areas Practicas</title>
+    <link rel="stylesheet" href="./../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    
+    <div id="menu-container"></div>
+
+
+    <div class="card-practicas">
+        <div class="card" data-modal="modal1">
+            <img src="./../img/area legal.webp" alt="Card 1">
+            <p class="PAP">Area Legal</p>
+        </div>
+        <div class="card" data-modal="modal2">
+            <img src="./../img/area de finanzas.webp" alt="Card 2">
+            <p class="PAP">Area de Finanzas</p>
+        </div>
+        <!-- <div class="card" data-modal="modal3">
+            <img src="./../img/gestion redes sociales.webp" alt="Card 3">
+            <p class="PAP">Gestion de Redes Sociales</p>
+        </div> -->
+        <div class="card" data-modal="modal4">
+            <img src="./../img/area creativa.webp" alt="Card 4">
+            <p class="PAP">Area Creativa</p>
+        </div>
+       
+    </div>
+
+    <!-- Modals -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+        <h2>Áreas de Legal</h2>
+        <ul class="practice-list">
+            <li>Derecho Corporativo</li>
+            <li>Civil & Mercantil</li>
+            <li>Notariado</li>
+            <li>Derecho de Competencia & Consumidores</li>
+            <li>Derecho de Propiedad Intelectual & de Tecnología</li>
+            <li>Derecho Bursátil</li>
+            <li>Comercios Internacionales</li>
+            <li>Derecho Laboral</li>
+            <li>Derecho de Familia</li>
+            <li>Medición y Arbitraje</li>
+            <li>Derecho Penal</li>
+            <li>Derecho Constitucional & Administrativo</li>
+        </ul>
+        </div>
+    </div>
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+        <h2>Servicios Financieros</h2>
+        <ul class="finance-list">
+            <li>Planeación Financiera</li>
+            <li>Auditorías & Administración Contable</li>
+            <li>Outsourcing Contable</li>
+            <li>Procedimientos Administrativos Fiscales</li>
+        </ul>
+        </div>
+    </div>
+    <!-- <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Content for Card 3</p>
+        </div>
+    </div> -->
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Servicios de Marketing Digital</h2>
+            <ul class="marketing-list">
+                <li>Asesoría & Estrategias de Marketing Digital</li>
+                <li>Gestión de Redes Sociales</li>
+                <li>Creación & Planificación de Contenido Digital</li>
+                <li>Fotografía y Video Profesional</li>
+                <li>Animación Digital</li>
+                <li>Asesoría & Diseño Web Multimedia</li>
+                <li>Programación Web</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Add similar modals for modal3, modal4, modal5, modal6 -->
+
+
+
+<br><br>
+
+
+
+    <div id="footer-container"></div>
+
+    <script>
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', () => {
+            const modalId = card.getAttribute('data-modal');
+            document.getElementById(modalId).style.display = 'flex';
+        });
+        });
+
+        document.querySelectorAll('.modal .close').forEach(closeBtn => {
+            closeBtn.addEventListener('click', () => {
+                closeBtn.closest('.modal').style.display = 'none';
+            });
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal')) {
+                e.target.style.display = 'none';
+            }
+        });
+
+    </script>
+
+    <script src="./../js/scriptVistas.js"></script>
+</body>
+</html>
