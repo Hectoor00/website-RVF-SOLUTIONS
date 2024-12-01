@@ -1,7 +1,7 @@
 :root {
     --color-white: #fff;
     --color-black-transparent: rgba(0, 0, 0, 0.7);
-    --color-black-opaque: rgba(0, 0, 0, 0.9);
+    --color-black-opaque: rgba(0, 0, 0, 0.4);
     --color-principal:rgb(0, 0, 0);
     --color-blue: #007bff;
     --color-light-gray: #f0f0f0;
@@ -846,15 +846,19 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     padding: 0; /* Eliminamos el padding */
+    height: 575px; /* Incrementamos la altura */
 }
 
 .card img {
     width: 100%;
-    height: 200px; /* Tamaño fijo para mantener consistencia */
+    height: 500px; /* Aumentamos la altura de la imagen */
     object-fit: cover; /* La imagen cubre el espacio eliminando márgenes blancos */
+    object-position: top center; /* Centra horizontalmente y ajusta hacia arriba */
     margin: 0; /* Eliminamos cualquier margen residual */
     display: block; /* Asegura que la imagen no herede estilos no deseados */
 }
+
+
 
 .card .PAP {
     margin: 1rem 0 0; /* Espaciado uniforme del texto respecto a la imagen */
